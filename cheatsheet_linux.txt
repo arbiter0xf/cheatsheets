@@ -12,8 +12,12 @@ xrandr --output DVI-I-1 --mode 1920x1080 --rotate left
 # https://unix.stackexchange.com/questions/1670/how-can-i-use-ffmpeg-to-split-mpeg-video-into-10-minute-chunks
 ffmpeg -i input.mp4 -c copy -map 0 -segment_time 00:15:00 -f segment -reset_timestamps 1 output%03d.mp4
 
-# Converting from .mp4 to .mkv
+# Converting from one format to another
 # https://github.com/ImageMagick/ImageMagick/issues/399
 # NOTE imagemagick package required
 export MAGICK_TEMPORARY_PATH="/mnt/workareas/stash/magic_temporary_path"
-convert file.mp4 file.mkv
+convert file.X file.Y
+
+# Convert from .mp4 to .mkv
+# https://blog.programster.org/ffmpeg-losslessly-convert-mp4-to-mkv
+ffmpeg -i some_session_1_pt_001.mp4 -vcodec copy -acodec copy some_session_1_pt_001.mkv
