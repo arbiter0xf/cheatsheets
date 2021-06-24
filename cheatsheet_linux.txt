@@ -5,4 +5,5 @@
 xrandr
 
 # Adjust secondary monitor
+# https://askubuntu.com/questions/149025/second-screen-is-rotated-in-a-dual-monitor-setup
 xrandr --output DVI-I-1 --mode 1920x1080 --rotate left
