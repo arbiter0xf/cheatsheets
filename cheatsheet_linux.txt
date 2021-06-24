@@ -1,0 +1,8 @@
+# Issue: Unwanted orientation in pivoted secondary monitor.
+#        Display is located on the left side of primary monitor.
+
+# List outputs of system
+xrandr
+
+# Adjust secondary monitor
+xrandr --output DVI-I-1 --mode 1920x1080 --rotate left
