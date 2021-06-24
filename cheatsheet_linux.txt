@@ -7,3 +7,7 @@ xrandr
 # Adjust secondary monitor
 # https://askubuntu.com/questions/149025/second-screen-is-rotated-in-a-dual-monitor-setup
 xrandr --output DVI-I-1 --mode 1920x1080 --rotate left
+
+# Split a video into multiple videos
+# https://unix.stackexchange.com/questions/1670/how-can-i-use-ffmpeg-to-split-mpeg-video-into-10-minute-chunks
+ffmpeg -i input.mp4 -c copy -map 0 -segment_time 00:15:00 -f segment -reset_timestamps 1 output%03d.mp4
